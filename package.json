@@ -1,0 +1,26 @@
+{
+  "name": "knowledge-base-manager",
+  "version": "1.0.0",
+  "description": "Small app build with electron for managing a Prolog knowledge base represented in XML.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DACUS1995/Manage---XML-knowledge-base.git"
+  },
+  "author": "Surdoiu Tudor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DACUS1995/Manage---XML-knowledge-base/issues"
+  },
+  "homepage": "https://github.com/DACUS1995/Manage---XML-knowledge-base#readme",
+  "dependencies": {
+    "electron": "^1.7.10"
+  },
+  "devDependencies": {
+    "electron-reload": "^1.2.2"
+  }
+}
