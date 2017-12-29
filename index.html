@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Knowledge Manager</title>
-  </head>
-  <body>
-    <h1>Knowledge Manager</h1>
-    We are using Nodeee.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+	<head>
+		<meta charset="UTF-8">
 
-    <script>
-      require('./index.js')
-    </script>
-  </body>
+		<!-- CSS -->
+		<link rel="stylesheet" href="style/lux-bootstrap.min.css">
+		<link rel="stylesheet" href="style/index.css">
+		<title>Knowledge Manager</title>
+	</head>
+	<body>
+		<div class="enclosing">
+			<div class="container">
+				<header>
+					<div>
+						<h2 class="card-title">Knowledge Manager</h1>
+					</div>
+				</header>
+				<aside>
+					<button type="button" class="btn btn-info side-button" id="add-fact">Add Fact</button>
+					<button type="button" class="btn btn-danger side-button" id="delete-fact">Delete Fact</button>					
+				</aside>
+				<main>CONTENT</main>
+				<footer>
+					<div class="signature">
+						Made By Dacus
+					</div>
+				</footer>
+				</div>
+		</div>
+		<script>
+			require('./index.js')
+		</script>
+	</body>
 </html>
