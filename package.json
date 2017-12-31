@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/DACUS1995/Manage---XML-knowledge-base#readme",
   "dependencies": {
-    "electron": "^1.7.10"
+    "electron": "^1.7.10",
+    "js2xmlparser": "^3.0.0",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "electron-reload": "^1.2.2"

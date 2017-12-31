@@ -1,32 +1,36 @@
 
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, ipcMain} = require('electron');
 
 const path = require('path')
 const url = require('url')
+const fs = require('fs');
+
+const utils = require("./utils.js");
+
 
 require('electron-reload')(__dirname);
 
-let mainWindow
+let mainWindow;
 
 function createWindow () {
-  // Create the browser window.
+	// Create the browser window.
 	mainWindow = new BrowserWindow({width: 800, height: 600})
 
-  // and load the index.html of the app.
+	// and load the index.html of the app.
 	mainWindow.loadURL(url.format({
 		pathname: path.join(__dirname, 'index.html'),
 		protocol: 'file:',
 		slashes: true
 	}))
 
-  // Open the DevTools.
+	// Open the DevTools.
 	mainWindow.webContents.openDevTools()
 
-  // Emitted when the window is closed.
+	// Emitted when the window is closed.
 	mainWindow.on('closed', function () {
 		mainWindow = null
-  })
-}
+	})
+};
 
 app.on('ready', createWindow)
 
@@ -35,10 +39,17 @@ app.on('window-all-closed', function () {
 	if (process.platform !== 'darwin') {
 		app.quit()
 	}
-})
+});
 
 app.on('activate', function () {
 	if (mainWindow === null) {
 		createWindow()
 	}
-})
+});
+
+// utils.setMainWindow(mainWindow);
+
+// Handle comands from Renderer
+ipcMain.on("load-file", (event, arg) => {
+    utils.readAndParse(arg, mainWindow);
+});

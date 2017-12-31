@@ -18,9 +18,76 @@
 				</header>
 				<aside>
 					<button type="button" class="btn btn-info side-button" id="add-fact">Add Fact</button>
-					<button type="button" class="btn btn-danger side-button" id="delete-fact">Delete Fact</button>					
+					<button type="button" class="btn btn-danger side-button" id="delete-fact">Delete Fact</button>		
+					<button type="button" class="btn btn-info side-button" id="load-file">Load File</button>				
 				</aside>
-				<main>CONTENT</main>
+				<main>
+					<div class="bs-component">
+						<ul class="nav nav-tabs">
+							<li class="nav-item">
+								<a class="nav-link active" id="rules-tab" data-toggle="tab" href="#rules">Rules</a>
+						  	</li>
+							<li class="nav-item">
+								<a class="nav-link" id="clauses-tab" data-toggle="tab" href="#clauses">Clauses</a>
+							</li>
+						</ul>
+					</div>
+					<div id="myTabContent" class="tab-content">
+						<div class="tab-pane fade active show" id="rules">
+							<div class="table-div overflow-x:auto;">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>X</th>
+											<th>FACT</th>
+											<th>Y</th>
+											<th>Z</th>
+											<th>FACT</th>
+											<th>W</th>
+										</tr>
+									</thead>
+									<tbody>
+										 <tr>
+											<td>John</td>
+											<td>Doe</td>
+											<td>john</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="clauses">
+							<div class="table-div overflow-x:auto;">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>Component 1</th>
+											<th>Fact</th>
+											<th>Component 2</th>											
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>John</td>
+											<td>Doe</td>
+											<td>john@example.com</td>
+										</tr>
+										<tr>
+											<td>Mary</td>
+											<td>Moe</td>
+											<td>mary@example.com</td>
+										</tr>
+										<tr>
+											<td>July</td>
+											<td>Dooley</td>
+											<td>july@example.com</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</main>
 				<footer>
 					<div class="signature">
 						Made By Dacus

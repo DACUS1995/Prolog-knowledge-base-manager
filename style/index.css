@@ -60,8 +60,19 @@ header {
     top: 20px;
 }
 
+#load-file {
+    position:relative;
+    transition: .5s ease;
+    left: 40px;
+    top: 60px;
+}
+
 .side-button {
     font-size: 10px;
     padding: 10px;
     border-radius: 4px;
+}
+
+.table-div {
+    color:blue;
 }
