@@ -1,4 +1,3 @@
-
 const {app, BrowserWindow, ipcMain} = require('electron');
 
 const path = require('path')
@@ -7,8 +6,9 @@ const fs = require('fs');
 
 const utils = require("./utils.js");
 
-
-require('electron-reload')(__dirname);
+require('electron-reload')(__dirname, {
+	electron: require('electron')
+  });
 
 let mainWindow;
 
@@ -30,6 +30,9 @@ function createWindow () {
 	mainWindow.on('closed', function () {
 		mainWindow = null
 	})
+
+	//To make sure that mainWindow is set
+	utils.setMainWindow(mainWindow);
 };
 
 app.on('ready', createWindow)
@@ -47,9 +50,8 @@ app.on('activate', function () {
 	}
 });
 
-// utils.setMainWindow(mainWindow);
-
 // Handle comands from Renderer
 ipcMain.on("load-file", (event, arg) => {
-    utils.readAndParse(arg, mainWindow);
+    utils.readAndParse(arg);
 });
+

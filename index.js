@@ -48,7 +48,7 @@ elButtonLoadFile.addEventListener(
     "click",
     event => {
         console.log("Cliked")
-        ipcRenderer.send('load-file', "test.xml");
+        ipcRenderer.send('load-file', path);
     }
 );
 
@@ -56,3 +56,21 @@ elButtonLoadFile.addEventListener(
 ipcRenderer.on("log", (event, arg) => {
     console.log(arg);
 });
+
+let path;
+let elInputChooseFile = document.getElementById("chooseFile");
+elInputChooseFile.addEventListener(
+    "change",
+    function(event){
+        event.preventDefault();
+
+        let filename;
+        path = filename = elInputChooseFile.value;
+
+        filename = path.replace("C:\\fakepath\\", "");
+        path = path.replace("C:\\fakepath\\", `${__dirname}\\`);
+
+        document.getElementById("noFile").innerHTML = filename;
+    }
+);
+

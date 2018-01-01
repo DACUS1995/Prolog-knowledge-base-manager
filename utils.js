@@ -12,18 +12,17 @@ module.exports =
         this.mainWindow = mainWindow
     },
 
-    logToRenderer: function(strLog, mainWindow)
+    logToRenderer: function(strLog)
     {
-        mainWindow.webContents.send("log", strLog);
+        this.mainWindow.webContents.send("log", strLog);
     },
 
-    readAndParse: function(strFileName, mainWindow)
+    readAndParse: function(strFileName)
     {
         let parser = new xml2js.Parser();
-
         fs.readFile(strFileName, "utf8", (err, data) => {
             parser.parseString(data, (err, result) => {
-                this.logToRenderer(result, mainWindow);
+                this.logToRenderer(result);
             });
         });
     }

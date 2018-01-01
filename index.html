@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 
 		<!-- CSS -->
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 		<link rel="stylesheet" href="style/lux-bootstrap.min.css">
 		<link rel="stylesheet" href="style/index.css">
 		<title>Knowledge Manager</title>
@@ -11,16 +12,30 @@
 	<body>
 		<div class="enclosing">
 			<div class="container">
+
 				<header>
 					<div>
-						<h2 class="card-title">Knowledge Manager</h1>
+						<h2 class="card-title">StarCraft Knowledge Manager</h1>
 					</div>
 				</header>
+
 				<aside>
 					<button type="button" class="btn btn-info side-button" id="add-fact">Add Fact</button>
-					<button type="button" class="btn btn-danger side-button" id="delete-fact">Delete Fact</button>		
-					<button type="button" class="btn btn-info side-button" id="load-file">Load File</button>				
+					<button type="button" class="btn btn-danger side-button" id="delete-fact">Delete Fact</button>	
+					
+					<div class="file-upload">
+						<div class="file-select">
+							<div class="file-select-button" id="fileName">Choose File</div>
+							<div class="file-select-name" id="noFile">No file chosen...</div> 
+							<input type="file" name="chooseFile" id="chooseFile">
+						</div>
+					</div>
+
+					<button type="button" class="btn btn-info side-button" id="load-file">Load File</button>
+					<br>
+					
 				</aside>
+
 				<main>
 					<div class="bs-component">
 						<ul class="nav nav-tabs">
