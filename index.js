@@ -70,7 +70,7 @@ elInputChooseFile.addEventListener(
         filename = path.replace("C:\\fakepath\\", "");
         path = path.replace("C:\\fakepath\\", `${__dirname}\\`);
 
-        document.getElementById("noFile").innerHTML = filename;
+        document.getElementById("noFile").innerHTML = filename.length < 10 ? `filename: ${filename}` :  filename;
     }
 );
 
