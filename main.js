@@ -52,6 +52,6 @@ app.on('activate', function () {
 
 // Handle comands from Renderer
 ipcMain.on("load-file", (event, arg) => {
-    utils.readAndParse(arg);
+	utils.readAndParseExtended(arg);
 });
 

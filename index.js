@@ -1,9 +1,11 @@
 "use strict"
 
 var {ipcRenderer, remote} = require('electron');
+let LoadData = require("./classes/LoadData.js");
 
 let elTabelTabRulesSelector = document.getElementById("rules-tab");
 let elTabelTabClausesSelector = document.getElementById("clauses-tab");
+
 
 elTabelTabRulesSelector.addEventListener(
     "click",
@@ -51,6 +53,17 @@ elButtonLoadFile.addEventListener(
         ipcRenderer.send('load-file', path);
     }
 );
+
+// Load data to table
+ipcRenderer.on("display", (event, arg) => {
+    console.log(arg);
+
+    let objFacts = arg["knowledge-base"].facts;
+    let objRules = arg["knowledge-base"].rules;
+
+    LoadData.handleFacts(objFacts);
+    LoadData.handleRules(objRules);
+});
 
 //Log requests from main process
 ipcRenderer.on("log", (event, arg) => {
