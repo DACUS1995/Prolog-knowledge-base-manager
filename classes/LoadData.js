@@ -75,13 +75,50 @@ LoadData.handleFacts = function(objFacts){
         }
     }
 
-    console.log(newBody);
 
     elTableBody.innerHTML = newBody;
 };
 
 LoadData.handleRules =  function(objRules){
+    let elDivTable = document.getElementById("rules");
+    let elTableBody = elDivTable.getElementsByTagName("tbody")[0];
 
+    let newBody = "";
+
+    if(Array.isArray(objRules.rule))
+    {
+        let arrRules = objRules.rule;
+        for(let it in arrRules)
+        {
+            newBody += `
+            <tr>
+                <td>${arrRules[it].if.first._text}</td>
+                <td>${arrRules[it].if.rel._text}</td>
+                <td>${arrRules[it].if.second._text}</td>
+                <td>${arrRules[it].then.first._text}</td>
+                <td>${arrRules[it].then.rel._text}</td>
+                <td>${arrRules[it].then.second._text}</td>
+            </tr>
+            `;
+        }
+    }
+    else
+    {
+        let objRule = objRules.rule;
+
+        newBody += `
+        <tr>
+            <td>${objRule.if.first._text}</td>
+            <td>${objRule.if.rel._text}</td>
+            <td>${objRule.if.second._text}</td>
+            <td>${objRule.then.first._text}</td>
+            <td>${objRule.then.rel._text}</td>
+            <td>${objRule.then.second._text}</td>
+        </tr>
+        `;
+    }
+
+    elTableBody.innerHTML = newBody;
 }
 
 module.exports = LoadData;

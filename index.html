@@ -20,8 +20,10 @@
 				</header>
 
 				<aside>
+					<button type="button" class="btn btn-info side-button" id="add-rule">Add Rule</button>
+					<button type="button" class="btn btn-danger side-button" id="delete-rule">Delete Rule</button>
 					<button type="button" class="btn btn-info side-button" id="add-fact">Add Fact</button>
-					<button type="button" class="btn btn-danger side-button" id="delete-fact">Delete Fact</button>	
+					<button type="button" class="btn btn-danger side-button" id="delete-fact">Delete Fact</button>
 					
 					<div class="file-upload">
 						<div class="file-select">
@@ -31,7 +33,7 @@
 						</div>
 					</div>
 
-					<button type="button" class="btn btn-info side-button" id="load-file">Load File</button>
+					<button type="button" class="btn btn-success side-button" id="load-file">Load File</button>
 					<br>
 					
 				</aside>
@@ -53,20 +55,20 @@
 								<table class="table table-hover">
 									<thead>
 										<tr>
-											<th>X</th>
+											<th>IF:<br>X</th>
 											<th>FACT</th>
 											<th>Y</th>
-											<th>Z</th>
+											<th>THEN:<br>Z</th>
 											<th>FACT</th>
 											<th>W</th>
 										</tr>
 									</thead>
 									<tbody>
-										 <tr>
+										 <!-- <tr>
 											<td>John</td>
 											<td>Doe</td>
 											<td>john</td>
-										</tr>
+										</tr> -->
 									</tbody>
 								</table>
 							</div>
@@ -82,7 +84,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
+										<!-- <tr>
 											<td>John</td>
 											<td>Doe</td>
 											<td>john@example.com</td>
@@ -96,7 +98,7 @@
 											<td>July</td>
 											<td>Dooley</td>
 											<td>july@example.com</td>
-										</tr>
+										</tr> -->
 									</tbody>
 								</table>
 							</div>
@@ -110,6 +112,86 @@
 				</footer>
 				</div>
 		</div>
+
+		<!-- Add Rules Modal -->
+		<div id="rules-modal" class="modal">
+			<!-- Modal content -->
+	  		<div class="modal-content">
+				<div class="modal-header">
+					<h2>Add Rule</h2>
+		  			<span class="close">&times;</span>
+				</div>
+				<div class="modal-body">
+		  			<p>Some text in the Modal Body</p>
+		  			<p>Some other text...</p>
+				</div>
+				<div class="modal-footer">
+		  			<h3> </h3>
+				</div>
+	  		</div>
+		</div>
+
+		<!-- Add Facts Modal -->
+		<div id="facts-modal" class="modal">
+			<!-- Modal content -->
+	  		<div class="modal-content">
+				<div class="modal-header">
+					<h2>Add Facts</h2>
+		  			<span class="close">&times;</span>
+				</div>
+				<div class="modal-body">
+		  			<div class="form-group">
+						<label for="exampleSelect1">Select Fact Type</label>
+						<select class="form-control" id="exampleSelect1">
+							<option>Destroy</option>
+							<option>Unit</option>
+						</select>
+						<div id="subselect-destroy">
+							<label for="exampleSelect2">Unit One</label>
+							<select class="form-control" id="exampleSelect2">
+								<option>Zealot</option>
+								<option>Probe</option>
+								<option>SCV</option>
+								<option>Marine</option>	
+							</select>
+							<label for="exampleSelect3">Unit Two</label>
+							<select class="form-control" id="exampleSelect3">
+								<option>Zealot</option>
+								<option>Probe</option>
+								<option>SCV</option>
+								<option>Marine</option>	
+							</select>
+						</div>
+						<div id="subselect-unit">
+							<label for="exampleSelect4">Name</label>
+							<select class="form-control" id="exampleSelect4">
+								<option>Zealot</option>
+								<option>Probe</option>
+								<option>SCV</option>
+								<option>Marine</option>									
+							</select>
+							<label for="exampleSelect5">Race</label>
+							<select class="form-control" id="exampleSelect5">
+								<option>Protos</option>
+								<option>Terran</option>
+								<option>Zerg</option>									
+							</select>
+							<label for="exampleSelect6">Cost</label>
+							<select class="form-control" id="exampleSelect6">
+								<option>60</option>
+								<option>50</option>
+								<option>30</option>									
+							</select>
+						</div>
+					</div>
+					
+					<button type="button" class="btn btn-info modal-button" id="accept-rule">Add Rule</button>
+
+				</div>
+				<div class="modal-footer"></div>
+	  		</div>
+		</div>
+		
 		<script>
 			require('./index.js')
 		</script>
