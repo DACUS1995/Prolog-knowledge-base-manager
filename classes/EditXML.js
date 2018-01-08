@@ -1,6 +1,6 @@
 function editXML(){};
 
-editXML.addFactItem = function(objKnowledgeBase)
+editXML.addFactItem = function(objKnowledgeBase, ipcRenderer)
 {
     //For the moment no single-value check YOLO
     let elFactType = document.getElementById("exampleSelect1");
@@ -44,11 +44,13 @@ editXML.addFactItem = function(objKnowledgeBase)
     }
 
     console.log(objKnowledgeBase);
+    editXML.saveToFile(objKnowledgeBase, ipcRenderer);
 }
 
-editXML.saveToFile = function()
+//Must be called everytime a modification is made to ensure the same state
+editXML.saveToFile = function(objKnowledgeBase, ipcRenderer)
 {
-
+    ipcRenderer.send('save-file', objKnowledgeBase);
 }
 
 module.exports = editXML;

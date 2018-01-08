@@ -160,7 +160,7 @@ elAcceptFact.addEventListener(
         event.preventDefault();
 
         //Edit the object create from XML
-        EditXML.addFactItem(objKnowledgeBase);
+        EditXML.addFactItem(objKnowledgeBase, ipcRenderer);
 
         factsModal.style.display = "none";
     }

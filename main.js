@@ -55,3 +55,7 @@ ipcMain.on("load-file", (event, arg) => {
 	utils.readAndParseExtended(arg);
 });
 
+// Handle save file event from renderer
+ipcMain.on("save-file", (event, arg) => {
+	utils.saveFileToXML(arg);
+});
