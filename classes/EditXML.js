@@ -24,20 +24,20 @@ editXML.addFactItem = function(objKnowledgeBase, ipcRenderer)
 
     if(elFactType.value == "Unit")
     {
-        let strName = document.getElementById("exampleSelect4");
-        let strRace = document.getElementById("exampleSelect5");
-        let strCost = document.getElementById("exampleSelect6");
+        let strName = document.getElementById("exampleSelect4").value;
+        let strRace = document.getElementById("exampleSelect5").value;
+        let strCost = document.getElementById("exampleSelect6").value;
 
         objKnowledgeBase["knowledge-base"].facts.unit.push(
             {
                     cost: {
-                        _text: strName
+                        _text: strCost
                     },
                     name: {
-                        _text: strRace
+                        _text: strName
                     },
                     race: {
-                        _text: strCost
+                        _text: strRace
                     }
             }
         );
