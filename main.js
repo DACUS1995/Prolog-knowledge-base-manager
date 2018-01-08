@@ -6,9 +6,9 @@ const fs = require('fs');
 
 const utils = require("./utils.js");
 
-require('electron-reload')(__dirname, {
-	electron: require('electron')
-  });
+// require('electron-reload')(__dirname, {
+// 	electron: require('electron')
+//   });
 
 let mainWindow;
 

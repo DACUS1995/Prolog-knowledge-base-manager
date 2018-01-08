@@ -153,7 +153,7 @@ elFactSelection.addEventListener(
 );
 
 // Event for modal fact accept button
-let elAcceptFact = document.getElementById("accept-rule");
+let elAcceptFact = document.getElementById("accept-fact");
 elAcceptFact.addEventListener(
     "click",
     function(event){
@@ -163,5 +163,19 @@ elAcceptFact.addEventListener(
         EditXML.addFactItem(objKnowledgeBase, ipcRenderer);
 
         factsModal.style.display = "none";
+    }
+);
+
+// Event for modal rule accept button
+let elAcceptRule = document.getElementById("accept-rule");
+elAcceptRule.addEventListener(
+    "click",
+    function(event){
+        event.preventDefault();
+
+        //Edit the object create from XML
+        EditXML.addRuleItem(objKnowledgeBase, ipcRenderer);
+
+        rulesModal.style.display = "none";
     }
 );

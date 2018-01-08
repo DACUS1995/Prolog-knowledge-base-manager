@@ -43,7 +43,45 @@ editXML.addFactItem = function(objKnowledgeBase, ipcRenderer)
         );
     }
 
-    console.log(objKnowledgeBase);
+    editXML.saveToFile(objKnowledgeBase, ipcRenderer);
+}
+
+editXML.addRuleItem = function(objKnowledgeBase, ipcRenderer)
+{
+    let strIfFirstUnit = document.getElementById("inputSmall1").value;
+    let strIfRelation = document.getElementById("inputSmall2").value;
+    let strIfSecondUnit = document.getElementById("inputSmall3").value;
+    let strThenFirstUnit = document.getElementById("inputSmall4").value;    
+    let strThenRelation = document.getElementById("inputSmall5").value;
+    let strThenSecondUnit = document.getElementById("inputSmall6").value;
+    
+    objKnowledgeBase["knowledge-base"].rules.rule.push(
+        {
+            if: {
+                first:{
+                    _text:strIfFirstUnit
+                },
+                rel:{
+                    _text:strIfRelation
+                },
+                second:{
+                    _text:strIfSecondUnit
+                }
+            },
+            then: {
+                first:{
+                    _text:strThenFirstUnit
+                },
+                rel:{
+                    _text:strThenRelation
+                },
+                second:{
+                    _text:strThenSecondUnit
+                }
+            }
+        }
+    );
+
     editXML.saveToFile(objKnowledgeBase, ipcRenderer);
 }
 

@@ -104,6 +104,14 @@ header {
     top: 20px; */
 }
 
+#accept-fact {
+    /* position:relative; */
+    transition: .5s ease;
+    border-radius: 15px 15px 15px 15px;
+    /* left: 40px;
+    top: 20px; */
+}
+
 .side-button {
     font-size: 10px;
     padding: 10px;
